@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: modulith, namespace: shop}
+spec:
+  replicas: 1
+  strategy:
+    rollingUpdate: {maxUnavailable: 0, maxSurge: 1}
+  selector:
+    matchLabels: {app: modulith}
+  template:
+    metadata:
+      labels: {app: modulith}
+    spec:
+      containers:
+        - name: modulith
+          image: demo-modulith-sb4:0.0.1
+          imagePullPolicy: IfNotPresent
+          ports: [{containerPort: 8080}]
+          resources:
+            requests: {cpu: 250m, memory: 512Mi}
+            limits: {memory: 768Mi}
+          startupProbe:
+            httpGet: {path: /actuator/health/liveness, port: 8080}
+            failureThreshold: 30
+            periodSeconds: 5
+          livenessProbe:
+            httpGet: {path: /actuator/health/liveness, port: 8080}
+            periodSeconds: 10
+          readinessProbe:
+            httpGet: {path: /actuator/health/readiness, port: 8080}
+            periodSeconds: 5
