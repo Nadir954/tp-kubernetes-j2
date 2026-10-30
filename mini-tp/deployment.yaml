@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: mon-site, namespace: tp-rs}
+spec:
+  replicas: 3
+  minReadySeconds: 5
+  revisionHistoryLimit: 10
+  strategy:
+    rollingUpdate: {maxSurge: 1, maxUnavailable: 1}
+  selector:
+    matchLabels: {app: mon-site}
+  template:
+    metadata:
+      labels: {app: mon-site}
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.23
+          imagePullPolicy: IfNotPresent
+          ports: [{containerPort: 80}]
