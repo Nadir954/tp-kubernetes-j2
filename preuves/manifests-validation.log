@@ -1,0 +1,8 @@
+configmap/db-config unchanged (server dry run)
+secret/db-credentials configured (server dry run)
+deployment.apps/modulith configured (server dry run)
+namespace/shop unchanged (server dry run)
+persistentvolumeclaim/postgres-data unchanged (server dry run)
+deployment.apps/postgres unchanged (server dry run)
+service/postgres unchanged (server dry run)
+service/modulith unchanged (server dry run)

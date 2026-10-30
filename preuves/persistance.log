@@ -1,0 +1,43 @@
+2
+[{"id":1,"name":"Arabica","price":5},{"id":2,"name":"Arabica","price":5}]
+[{"id":1,"name":"Arabica","price":5},{"id":2,"name":"Arabica","price":5}]
+[{"id":1,"name":"Arabica","price":5},{"id":2,"name":"Arabica","price":5}]
+[{"id":1,"name":"Arabica","price":5},{"id":2,"name":"Arabica","price":5}]
+[{"id":1,"name":"Arabica","price":5},{"id":2,"name":"Arabica","price":5}]
+[{"id":1,"name":"Arabica","price":5},{"id":2,"name":"Arabica","price":5}]
+[{"id":1,"name":"Arabica","price":5},{"id":2,"name":"Arabica","price":5}]
+[{"id":1,"name":"Arabica","price":5},{"id":2,"name":"Arabica","price":5}]
+[{"id":1,"name":"Arabica","price":5},{"id":2,"name":"Arabica","price":5}]
+[{"id":1,"name":"Arabica","price":5},{"id":2,"name":"Arabica","price":5}]
+pod "curl-1793370705-21028" deleted from shop namespace
+ id |  name   | price
+----+---------+-------
+  1 | Arabica |     5
+  2 | Arabica |     5
+(2 rows)
+
+ id | coffee_id | quantity
+----+-----------+----------
+  1 |         1 |        0
+  2 |         2 |        0
+(2 rows)
+
+                  id                  | completion_attempts |        completion_date        |                event_type                |    last_resubmission_date     |                                             listener_id                                              |       publication_date        |        serialized_event         |  status
+--------------------------------------+---------------------+-------------------------------+------------------------------------------+-------------------------------+------------------------------------------------------------------------------------------------------+-------------------------------+---------------------------------+-----------
+ 3cbe6457-9a42-41bb-bc96-bf34873c879e |                   1 | 2026-10-30 14:31:02.410435+00 | org.formation.shop.catalog.CoffeeCreated | 2026-10-30 14:31:02.25085+00  | org.formation.shop.inventory.internal.InventoryListener.on(org.formation.shop.catalog.CoffeeCreated) | 2026-10-30 14:31:02.25085+00  | {"coffeeId":1,"name":"Arabica"} | COMPLETED
+ 80176b3e-2753-4724-a50c-a463085de461 |                   1 | 2026-10-30 14:31:46.048063+00 | org.formation.shop.catalog.CoffeeCreated | 2026-10-30 14:31:45.906307+00 | org.formation.shop.inventory.internal.InventoryListener.on(org.formation.shop.catalog.CoffeeCreated) | 2026-10-30 14:31:45.906307+00 | {"coffeeId":2,"name":"Arabica"} | COMPLETED
+(2 rows)
+
+pod "modulith-69bfdf6767-fm5jx" deleted from shop namespace
+pod "modulith-69bfdf6767-nsq2w" deleted from shop namespace
+pod "modulith-69bfdf6767-qrfzq" deleted from shop namespace
+pod "postgres-7669f78db-75l9t" deleted from shop namespace
+Waiting for deployment "postgres" rollout to finish: 0 of 1 updated replicas are available...
+deployment "postgres" successfully rolled out
+Waiting for deployment "modulith" rollout to finish: 0 of 3 updated replicas are available...
+Waiting for deployment "modulith" rollout to finish: 1 of 3 updated replicas are available...
+Waiting for deployment "modulith" rollout to finish: 2 of 3 updated replicas are available...
+deployment "modulith" successfully rolled out
+[{"id":1,"name":"Arabica","price":5},{"id":2,"name":"Arabica","price":5}]
+pod "curl-1793370728-22425" deleted from shop namespace
+Persistance vérifiée : 2 café(s) avant et après remplacement des pods.

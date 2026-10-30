@@ -1,0 +1,47 @@
+NAME                      STATUS   ROLES           AGE     VERSION
+formation-control-plane   Ready    control-plane   5m25s   v1.34.0
+formation-worker          Ready    <none>          5m12s   v1.34.0
+formation-worker2         Ready    <none>          5m12s   v1.34.0
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE     CONTAINERS   IMAGES                    SELECTOR
+deployment.apps/modulith   3/3     3            3           4m24s   modulith     demo-modulith-sb4:0.0.1   app=modulith
+deployment.apps/postgres   1/1     1            1           2m28s   postgres     postgres:16               app=postgres
+
+NAME                                  DESIRED   CURRENT   READY   AGE     CONTAINERS   IMAGES                    SELECTOR
+replicaset.apps/modulith-69bfdf6767   3         3         3       108s    modulith     demo-modulith-sb4:0.0.1   app=modulith,pod-template-hash=69bfdf6767
+replicaset.apps/modulith-76579fd768   0         0         0       2m49s   modulith     demo-modulith-sb4:0.0.1   app=modulith,pod-template-hash=76579fd768
+replicaset.apps/modulith-85ccb65f8    0         0         0       2m47s   modulith     demo-modulith-sb4:0.0.1   app=modulith,pod-template-hash=85ccb65f8
+replicaset.apps/modulith-cc58bf7f7    0         0         0       4m24s   modulith     demo-modulith-sb4:0.0.1   app=modulith,pod-template-hash=cc58bf7f7
+replicaset.apps/postgres-7669f78db    1         1         1       2m28s   postgres     postgres:16               app=postgres,pod-template-hash=7669f78db
+
+NAME                            READY   STATUS    RESTARTS   AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+pod/modulith-69bfdf6767-2f6x8   1/1     Running   0          30s   10.244.2.16   formation-worker2   <none>           <none>
+pod/modulith-69bfdf6767-ljtff   1/1     Running   0          30s   10.244.1.23   formation-worker    <none>           <none>
+pod/modulith-69bfdf6767-tm5vw   1/1     Running   0          30s   10.244.2.17   formation-worker2   <none>           <none>
+pod/postgres-7669f78db-kxs5g    1/1     Running   0          28s   10.244.1.24   formation-worker    <none>           <none>
+
+NAME               TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE     SELECTOR
+service/modulith   ClusterIP   10.96.216.144   <none>        80/TCP     4m24s   app=modulith
+service/postgres   ClusterIP   10.96.204.125   <none>        5432/TCP   2m28s   app=postgres
+
+NAME                                  STATUS   VOLUME                                     CAPACITY   ACCESS MODES   STORAGECLASS   VOLUMEATTRIBUTESCLASS   AGE     VOLUMEMODE
+persistentvolumeclaim/postgres-data   Bound    pvc-2f1e9e80-cb4a-49d8-b5ab-804b80f654aa   1Gi        RWO            standard       <unset>                 2m28s   Filesystem
+
+NAME                                            ADDRESSTYPE   PORTS   ENDPOINTS                             AGE
+endpointslice.discovery.k8s.io/modulith-jtm6c   IPv4          8080    10.244.1.23,10.244.2.17,10.244.2.16   4m24s
+endpointslice.discovery.k8s.io/postgres-tdzhz   IPv4          5432    10.244.1.24                           2m28s
+NAME        STATUS   ROLES           AGE     VERSION
+tp-rs       Ready    control-plane   89m     v1.34.0
+tp-rs-m02   Ready    <none>          89m     v1.34.0
+tp-rs-m04   Ready    <none>          3m15s   v1.34.0
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES       SELECTOR
+deployment.apps/mon-site   3/3     3            3           56s   nginx        nginx:1.27   app=mon-site
+
+NAME                                  DESIRED   CURRENT   READY   AGE   CONTAINERS   IMAGES       SELECTOR
+replicaset.apps/mon-site-597895787f   3         3         3       24s   nginx        nginx:1.27   app=mon-site,pod-template-hash=597895787f
+replicaset.apps/mon-site-5b67f86759   0         0         0       56s   nginx        nginx:1.23   app=mon-site,pod-template-hash=5b67f86759
+replicaset.apps/mon-site-7df5dc4cb5   0         0         0       48s   nginx        nginx:1.25   app=mon-site,pod-template-hash=7df5dc4cb5
+
+NAME                            READY   STATUS    RESTARTS   AGE   IP           NODE        NOMINATED NODE   READINESS GATES
+pod/mon-site-597895787f-f66kc   1/1     Running   0          18s   10.244.0.7   tp-rs       <none>           <none>
+pod/mon-site-597895787f-mx8v5   1/1     Running   0          24s   10.244.1.5   tp-rs-m02   <none>           <none>
+pod/mon-site-597895787f-rgwfh   1/1     Running   0          24s   10.244.2.5   tp-rs-m04   <none>           <none>

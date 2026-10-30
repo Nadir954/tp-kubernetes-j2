@@ -1,0 +1,273 @@
+NAME                      STATUS   ROLES           AGE    VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                         KERNEL-VERSION      CONTAINER-RUNTIME
+formation-control-plane   Ready    control-plane   2m8s   v1.34.0   172.23.0.3    <none>        Debian GNU/Linux 12 (bookworm)   6.8.0-124-generic   containerd://2.1.3
+formation-worker          Ready    <none>          115s   v1.34.0   172.23.0.4    <none>        Debian GNU/Linux 12 (bookworm)   6.8.0-124-generic   containerd://2.1.3
+formation-worker2         Ready    <none>          115s   v1.34.0   172.23.0.2    <none>        Debian GNU/Linux 12 (bookworm)   6.8.0-124-generic   containerd://2.1.3
+NAME                                              READY   STATUS    RESTARTS   AGE
+coredns-66bc5c9577-vljpz                          1/1     Running   0          117s
+coredns-66bc5c9577-vmdcq                          1/1     Running   0          117s
+etcd-formation-control-plane                      1/1     Running   0          2m3s
+kindnet-jzz5m                                     1/1     Running   0          117s
+kindnet-rnv2s                                     1/1     Running   0          115s
+kindnet-rv5sf                                     1/1     Running   0          115s
+kube-apiserver-formation-control-plane            1/1     Running   0          2m3s
+kube-controller-manager-formation-control-plane   1/1     Running   0          2m3s
+kube-proxy-sr45d                                  1/1     Running   0          115s
+kube-proxy-srh24                                  1/1     Running   0          117s
+kube-proxy-x8ljf                                  1/1     Running   0          7s
+kube-scheduler-formation-control-plane            1/1     Running   0          2m4s
+Name:               formation-control-plane
+Roles:              control-plane
+Labels:             beta.kubernetes.io/arch=amd64
+                    beta.kubernetes.io/os=linux
+                    kubernetes.io/arch=amd64
+                    kubernetes.io/hostname=formation-control-plane
+                    kubernetes.io/os=linux
+                    node-role.kubernetes.io/control-plane=
+                    node.kubernetes.io/exclude-from-external-load-balancers=
+Annotations:        node.alpha.kubernetes.io/ttl: 0
+                    volumes.kubernetes.io/controller-managed-attach-detach: true
+CreationTimestamp:  Fri, 30 Oct 2026 15:26:52 +0100
+Taints:             node-role.kubernetes.io/control-plane:NoSchedule
+Unschedulable:      false
+Lease:
+  HolderIdentity:  formation-control-plane
+  AcquireTime:     <unset>
+  RenewTime:       Fri, 30 Oct 2026 15:28:59 +0100
+Conditions:
+  Type             Status  LastHeartbeatTime                 LastTransitionTime                Reason                       Message
+  ----             ------  -----------------                 ------------------                ------                       -------
+  MemoryPressure   False   Fri, 30 Oct 2026 15:27:58 +0100   Fri, 30 Oct 2026 15:26:49 +0100   KubeletHasSufficientMemory   kubelet has sufficient memory available
+  DiskPressure     False   Fri, 30 Oct 2026 15:27:58 +0100   Fri, 30 Oct 2026 15:26:49 +0100   KubeletHasNoDiskPressure     kubelet has no disk pressure
+  PIDPressure      False   Fri, 30 Oct 2026 15:27:58 +0100   Fri, 30 Oct 2026 15:26:49 +0100   KubeletHasSufficientPID      kubelet has sufficient PID available
+  Ready            True    Fri, 30 Oct 2026 15:27:58 +0100   Fri, 30 Oct 2026 15:27:15 +0100   KubeletReady                 kubelet is posting ready status
+Addresses:
+  InternalIP:  172.23.0.3
+  Hostname:    formation-control-plane
+Capacity:
+  cpu:                12
+  ephemeral-storage:  484542356Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             16038504Ki
+  pods:               110
+Allocatable:
+  cpu:                12
+  ephemeral-storage:  484542356Ki
+  hugepages-1Gi:      0
+  hugepages-2Mi:      0
+  memory:             16038504Ki
+  pods:               110
+System Info:
+  Machine ID:                 f11eeaef2b0847058e3cf8d7f960bf67
+  System UUID:                97970cc0-525a-4dd0-b34e-7c3fe9225707
+  Boot ID:                    0c2ab04f-7b67-4a2c-aee6-3230ed02c595
+  Kernel Version:             6.8.0-124-generic
+  OS Image:                   Debian GNU/Linux 12 (bookworm)
+  Operating System:           linux
+  Architecture:               amd64
+  Container Runtime Version:  containerd://2.1.3
+  Kubelet Version:            v1.34.0
+  Kube-Proxy Version:
+PodCIDR:                      10.244.0.0/24
+PodCIDRs:                     10.244.0.0/24
+ProviderID:                   kind://docker/formation/formation-control-plane
+Non-terminated Pods:          (9 in total)
+  Namespace                   Name                                               CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+  ---------                   ----                                               ------------  ----------  ---------------  -------------  ---
+  kube-system                 coredns-66bc5c9577-vljpz                           100m (0%)     0 (0%)      70Mi (0%)        170Mi (1%)     117s
+  kube-system                 coredns-66bc5c9577-vmdcq                           100m (0%)     0 (0%)      70Mi (0%)        170Mi (1%)     117s
+  kube-system                 etcd-formation-control-plane                       100m (0%)     0 (0%)      100Mi (0%)       0 (0%)         2m3s
+  kube-system                 kindnet-jzz5m                                      100m (0%)     100m (0%)   50Mi (0%)        50Mi (0%)      117s
+  kube-system                 kube-apiserver-formation-control-plane             250m (2%)     0 (0%)      0 (0%)           0 (0%)         2m3s
+  kube-system                 kube-controller-manager-formation-control-plane    200m (1%)     0 (0%)      0 (0%)           0 (0%)         2m3s
+  kube-system                 kube-proxy-srh24                                   0 (0%)        0 (0%)      0 (0%)           0 (0%)         117s
+  kube-system                 kube-scheduler-formation-control-plane             100m (0%)     0 (0%)      0 (0%)           0 (0%)         2m4s
+  local-path-storage          local-path-provisioner-7b8c8ddbd6-dttf6            0 (0%)        0 (0%)      0 (0%)           0 (0%)         117s
+Allocated resources:
+  (Total limits may be over 100 percent, i.e., overcommitted.)
+  Resource           Requests    Limits
+  --------           --------    ------
+  cpu                950m (7%)   100m (0%)
+  memory             290Mi (1%)  390Mi (2%)
+  ephemeral-storage  0 (0%)      0 (0%)
+  hugepages-1Gi      0 (0%)      0 (0%)
+  hugepages-2Mi      0 (0%)      0 (0%)
+Events:
+  Type    Reason                   Age   From             Message
+  ----    ------                   ----  ----             -------
+  Normal  Starting                 116s  kube-proxy
+  Normal  Starting                 2m3s  kubelet          Starting kubelet.
+  Normal  NodeAllocatableEnforced  2m3s  kubelet          Updated Node Allocatable limit across pods
+  Normal  NodeHasSufficientMemory  2m3s  kubelet          Node formation-control-plane status is now: NodeHasSufficientMemory
+  Normal  NodeHasNoDiskPressure    2m3s  kubelet          Node formation-control-plane status is now: NodeHasNoDiskPressure
+  Normal  NodeHasSufficientPID     2m3s  kubelet          Node formation-control-plane status is now: NodeHasSufficientPID
+  Normal  RegisteredNode           119s  node-controller  Node formation-control-plane event: Registered Node formation-control-plane in Controller
+  Normal  NodeReady                105s  kubelet          Node formation-control-plane status is now: NodeReady
+deployment.apps/nginx created
+Waiting for deployment "nginx" rollout to finish: 0 of 2 updated replicas are available...
+Waiting for deployment "nginx" rollout to finish: 1 of 2 updated replicas are available...
+deployment "nginx" successfully rolled out
+NAME                     READY   STATUS    RESTARTS   AGE   IP           NODE                NOMINATED NODE   READINESS GATES
+nginx-85f7d4dd78-74qst   1/1     Running   0          1s    10.244.1.6   formation-worker    <none>           <none>
+nginx-85f7d4dd78-kd75f   1/1     Running   0          1s    10.244.2.5   formation-worker2   <none>           <none>
+pod "nginx-85f7d4dd78-74qst" deleted from default namespace
+deployment "nginx" successfully rolled out
+deployment.apps/nginx scaled
+Waiting for deployment "nginx" rollout to finish: 2 out of 4 new replicas have been updated...
+Waiting for deployment "nginx" rollout to finish: 2 of 4 updated replicas are available...
+Waiting for deployment "nginx" rollout to finish: 3 of 4 updated replicas are available...
+deployment "nginx" successfully rolled out
+NAME                     READY   STATUS    RESTARTS   AGE   IP           NODE                NOMINATED NODE   READINESS GATES
+nginx-85f7d4dd78-29jrk   1/1     Running   0          1s    10.244.1.8   formation-worker    <none>           <none>
+nginx-85f7d4dd78-2kz6g   1/1     Running   0          3s    10.244.1.7   formation-worker    <none>           <none>
+nginx-85f7d4dd78-478xk   1/1     Running   0          1s    10.244.2.6   formation-worker2   <none>           <none>
+nginx-85f7d4dd78-kd75f   1/1     Running   0          4s    10.244.2.5   formation-worker2   <none>           <none>
+deployment.apps "nginx" deleted from default namespace
+CONTAINER           IMAGE               CREATED                  STATE               NAME                ATTEMPT             POD ID              POD                      NAMESPACE
+bf156625a4376       1e5f3c5b981a9       Less than a second ago   Running             nginx               0                   814e31449e138       nginx-85f7d4dd78-29jrk   default
+edc9ceddc11e5       1e5f3c5b981a9       2 seconds ago            Running             nginx               0                   0b38863264de7       nginx-85f7d4dd78-2kz6g   default
+8b558a504a983       df0860106674d       10 seconds ago           Running             kube-proxy          0                   9f94d40c33e30       kube-proxy-x8ljf         kube-system
+2fac9f8dabc30       409467f978b4a       About a minute ago       Running             kindnet-cni         0                   a587d21ffd95b       kindnet-rv5sf            kube-system
+IMAGE          CREATED   CREATED BY                                      SIZE      COMMENT
+4e7a78c4739b   N/A       Buildpacks Process Types                        69B
+<missing>      N/A       Buildpacks Launcher Config                      1.96kB
+<missing>      N/A       Buildpacks Application Launcher                 2.93MB
+<missing>      N/A       Application Slice: 5                            0B
+<missing>      N/A       Application Slice: 4                            23.1kB
+<missing>      N/A       Application Slice: 3                            0B
+<missing>      N/A       Application Slice: 2                            402kB
+<missing>      N/A       Application Slice: 1                            61MB
+<missing>      N/A       Software Bill-of-Materials                      974kB
+<missing>      N/A       Layer: 'web-application-type', Created by bu…   3B
+<missing>      N/A       Layer: 'spring-cloud-bindings', Created by b…   77.4kB
+<missing>      N/A       Layer: 'helper', Created by buildpack: paket…   4.02MB
+<missing>      N/A       Layer: 'classpath', Created by buildpack: pa…   11B
+<missing>      N/A       Layer: 'jre', Created by buildpack: paketo-b…   207MB
+<missing>      N/A       Layer: 'java-security-properties', Created b…   214B
+<missing>      N/A       Layer: 'helper', Created by buildpack: paket…   5.49MB
+<missing>      N/A       Layer: 'helper', Created by buildpack: paket…   5.19MB
+<missing>      N/A                                                       519B
+<missing>      N/A                                                       191B
+<missing>      N/A                                                       24.9MB
+deployment "modulith" successfully rolled out
+Server:		10.96.0.10
+Address:	10.96.0.10:53
+
+
+Name:	modulith.shop.svc.cluster.local
+Address: 10.96.216.144
+
+pod "dns" deleted from shop namespace
+1
+[{"id":1,"name":"Arabica","price":5}]
+0
+pod "curl-1793370547-12606" deleted from shop namespace
+pod "modulith-cc58bf7f7-gfkwl" deleted from shop namespace
+Waiting for deployment "modulith" rollout to finish: 0 of 1 updated replicas are available...
+deployment "modulith" successfully rolled out
+[]
+pod "curl-1793370563-31399" deleted from shop namespace
+deployment.apps/modulith patched
+NAME                        READY   STATUS    RESTARTS   AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+modulith-76579fd768-sfzbd   0/1     Running   0          2s    10.244.2.8    formation-worker2   <none>           <none>
+modulith-cc58bf7f7-wcv6t    1/1     Running   0          18s   10.244.1.11   formation-worker    <none>           <none>
+apiVersion: v1
+items:
+- addressType: IPv4
+  apiVersion: discovery.k8s.io/v1
+  endpoints:
+  - addresses:
+    - 10.244.1.11
+    conditions:
+      ready: true
+      serving: true
+      terminating: false
+    nodeName: formation-worker
+    targetRef:
+      kind: Pod
+      name: modulith-cc58bf7f7-wcv6t
+      namespace: shop
+      uid: ce9ace4e-5686-4611-8b55-c5de67c07a87
+  - addresses:
+    - 10.244.2.8
+    conditions:
+      ready: false
+      serving: false
+      terminating: false
+    nodeName: formation-worker2
+    targetRef:
+      kind: Pod
+      name: modulith-76579fd768-sfzbd
+      namespace: shop
+      uid: e5d4ae28-6820-4b31-9c9c-0c7d52ad0b2b
+  kind: EndpointSlice
+  metadata:
+    annotations:
+      endpoints.kubernetes.io/last-change-trigger-time: "2026-10-30T14:29:28Z"
+    creationTimestamp: "2026-10-30T14:27:53Z"
+    generateName: modulith-
+    generation: 8
+    labels:
+      endpointslice.kubernetes.io/managed-by: endpointslice-controller.k8s.io
+      kubernetes.io/service-name: modulith
+    name: modulith-jtm6c
+    namespace: shop
+    ownerReferences:
+    - apiVersion: v1
+      blockOwnerDeletion: true
+      controller: true
+      kind: Service
+      name: modulith
+      uid: b73c3e20-a139-4240-a92c-7050d119d052
+    resourceVersion: "1145"
+    uid: 7da79745-0766-4d73-9213-9fb1ee76b2b6
+  ports:
+  - name: ""
+    port: 8080
+    protocol: TCP
+kind: List
+metadata:
+  resourceVersion: ""
+deployment.apps/modulith configured
+deployment "modulith" successfully rolled out
+deployment.apps/modulith restarted
+Waiting for deployment "modulith" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "modulith" rollout to finish: 1 old replicas are pending termination...
+deployment "modulith" successfully rolled out
+NAME                  DESIRED   CURRENT   READY   AGE
+modulith-76579fd768   0         0         0       13s
+modulith-85ccb65f8    1         1         1       11s
+modulith-cc58bf7f7    0         0         0       108s
+deployment.apps/modulith rolled back
+Waiting for deployment "modulith" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "modulith" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "modulith" rollout to finish: 1 old replicas are pending termination...
+deployment "modulith" successfully rolled out
+deployment.apps/modulith scaled
+Waiting for deployment "modulith" rollout to finish: 1 of 3 updated replicas are available...
+Waiting for deployment "modulith" rollout to finish: 2 of 3 updated replicas are available...
+deployment "modulith" successfully rolled out
+All commands and output from this session will be recorded in container logs, including credentials and sensitive information passed through the command prompt.
+If you don't see a command prompt, try pressing enter.
+[]
+[{"id":1,"name":"Arabica","price":5}]
+[{"id":1,"name":"Arabica","price":5}]
+[]
+[]
+[{"id":1,"name":"Arabica","price":5}]
+[]
+[]
+pod "curl-1793370613-7793" deleted from shop namespace
+NAME                           READY   STATUS    RESTARTS   AGE   IP            NODE                NOMINATED NODE   READINESS GATES
+pod/modulith-cc58bf7f7-b5s7w   1/1     Running   0          36s   10.244.2.9    formation-worker2   <none>           <none>
+pod/modulith-cc58bf7f7-d4dm6   1/1     Running   0          26s   10.244.2.10   formation-worker2   <none>           <none>
+pod/modulith-cc58bf7f7-fdh6l   1/1     Running   0          26s   10.244.1.14   formation-worker    <none>           <none>
+pod/postgres-7669f78db-767p7   1/1     Running   0          29s   10.244.1.15   formation-worker    <none>           <none>
+
+NAME               TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)    AGE     SELECTOR
+service/modulith   ClusterIP   10.96.216.144   <none>        80/TCP     2m25s   app=modulith
+service/postgres   ClusterIP   10.96.204.125   <none>        5432/TCP   29s     app=postgres
+
+NAME                                            ADDRESSTYPE   PORTS   ENDPOINTS                            AGE
+endpointslice.discovery.k8s.io/modulith-jtm6c   IPv4          8080    10.244.2.9,10.244.1.14,10.244.2.10   2m25s
+endpointslice.discovery.k8s.io/postgres-tdzhz   IPv4          5432    10.244.1.15                          29s

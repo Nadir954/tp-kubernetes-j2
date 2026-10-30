@@ -1,0 +1,224 @@
+NAME        STATUS   ROLES           AGE   VERSION
+tp-rs       Ready    control-plane   86m   v1.34.0
+tp-rs-m02   Ready    <none>          86m   v1.34.0
+tp-rs-m04   Ready    <none>          33s   v1.34.0
+1.23: Pulling from library/nginx
+f03b40093957: Pulling fs layer
+0972072e0e8a: Pulling fs layer
+a85095acb896: Pulling fs layer
+d24b987aa74e: Pulling fs layer
+6c1a86118ade: Pulling fs layer
+9989f7b33228: Pulling fs layer
+d24b987aa74e: Waiting
+6c1a86118ade: Waiting
+9989f7b33228: Waiting
+a85095acb896: Verifying Checksum
+a85095acb896: Download complete
+d24b987aa74e: Verifying Checksum
+d24b987aa74e: Download complete
+6c1a86118ade: Verifying Checksum
+6c1a86118ade: Download complete
+0972072e0e8a: Verifying Checksum
+0972072e0e8a: Download complete
+9989f7b33228: Verifying Checksum
+9989f7b33228: Download complete
+f03b40093957: Verifying Checksum
+f03b40093957: Download complete
+f03b40093957: Pull complete
+0972072e0e8a: Pull complete
+a85095acb896: Pull complete
+d24b987aa74e: Pull complete
+6c1a86118ade: Pull complete
+9989f7b33228: Pull complete
+Digest: sha256:f5747a42e3adcb3168049d63278d7251d91185bb5111d2563d58729a5c9179b0
+Status: Downloaded newer image for nginx:1.23
+docker.io/library/nginx:1.23
+1.25: Pulling from library/nginx
+09f376ebb190: Pulling fs layer
+a11fc495bafd: Pulling fs layer
+933cc8470577: Pulling fs layer
+999643392fb7: Pulling fs layer
+971bb7f4fb12: Pulling fs layer
+45337c09cd57: Pulling fs layer
+de3b062c0af7: Pulling fs layer
+999643392fb7: Waiting
+971bb7f4fb12: Waiting
+45337c09cd57: Waiting
+de3b062c0af7: Waiting
+933cc8470577: Verifying Checksum
+933cc8470577: Download complete
+09f376ebb190: Verifying Checksum
+09f376ebb190: Download complete
+a11fc495bafd: Verifying Checksum
+a11fc495bafd: Download complete
+45337c09cd57: Verifying Checksum
+45337c09cd57: Download complete
+971bb7f4fb12: Verifying Checksum
+971bb7f4fb12: Download complete
+09f376ebb190: Pull complete
+a11fc495bafd: Pull complete
+933cc8470577: Pull complete
+999643392fb7: Download complete
+999643392fb7: Pull complete
+971bb7f4fb12: Pull complete
+45337c09cd57: Pull complete
+de3b062c0af7: Verifying Checksum
+de3b062c0af7: Download complete
+de3b062c0af7: Pull complete
+Digest: sha256:a484819eb60211f5299034ac80f6a681b06f89e65866ce91f356ed7c72af059c
+Status: Downloaded newer image for nginx:1.25
+docker.io/library/nginx:1.25
+1.27: Pulling from library/nginx
+dad67da3f26b: Pulling fs layer
+3b00567da964: Pulling fs layer
+56b81cfa547d: Pulling fs layer
+1bc5dc8b475d: Pulling fs layer
+979e6233a40a: Pulling fs layer
+d2a7ba8dbfee: Pulling fs layer
+32e44235e1d5: Pulling fs layer
+979e6233a40a: Waiting
+d2a7ba8dbfee: Waiting
+32e44235e1d5: Waiting
+1bc5dc8b475d: Waiting
+56b81cfa547d: Verifying Checksum
+56b81cfa547d: Download complete
+1bc5dc8b475d: Download complete
+dad67da3f26b: Verifying Checksum
+dad67da3f26b: Download complete
+979e6233a40a: Verifying Checksum
+979e6233a40a: Download complete
+d2a7ba8dbfee: Download complete
+32e44235e1d5: Download complete
+3b00567da964: Verifying Checksum
+3b00567da964: Download complete
+dad67da3f26b: Pull complete
+3b00567da964: Pull complete
+56b81cfa547d: Pull complete
+1bc5dc8b475d: Pull complete
+979e6233a40a: Pull complete
+d2a7ba8dbfee: Pull complete
+32e44235e1d5: Pull complete
+Digest: sha256:6784fb0834aa7dbbe12e3d7471e69c290df3e6ba810dc38b34ae33d3c1c05f7d
+Status: Downloaded newer image for nginx:1.27
+docker.io/library/nginx:1.27
+namespace/tp-rs created
+deployment.apps/mon-site created
+Waiting for deployment "mon-site" rollout to finish: 0 of 3 updated replicas are available...
+Waiting for deployment "mon-site" rollout to finish: 0 of 3 updated replicas are available...
+Waiting for deployment "mon-site" rollout to finish: 0 of 3 updated replicas are available...
+Waiting for deployment "mon-site" rollout to finish: 0 of 3 updated replicas are available...
+Waiting for deployment "mon-site" rollout to finish: 1 of 3 updated replicas are available...
+deployment "mon-site" successfully rolled out
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES       SELECTOR
+deployment.apps/mon-site   3/3     3            3           8s    nginx        nginx:1.23   app=mon-site
+
+NAME                                  DESIRED   CURRENT   READY   AGE   CONTAINERS   IMAGES       SELECTOR
+replicaset.apps/mon-site-5b67f86759   3         3         3       8s    nginx        nginx:1.23   app=mon-site,pod-template-hash=5b67f86759
+
+NAME                            READY   STATUS    RESTARTS   AGE   IP           NODE        NOMINATED NODE   READINESS GATES
+pod/mon-site-5b67f86759-ftlpd   1/1     Running   0          8s    10.244.2.2   tp-rs-m04   <none>           <none>
+pod/mon-site-5b67f86759-jlgs5   1/1     Running   0          8s    10.244.0.4   tp-rs       <none>           <none>
+pod/mon-site-5b67f86759-jqn8f   1/1     Running   0          8s    10.244.1.2   tp-rs-m02   <none>           <none>
+NAME                  DESIRED   IMAGE
+mon-site-5b67f86759   3         nginx:1.23
+deployment.apps/mon-site
+REVISION  CHANGE-CAUSE
+1         <none>
+
+deployment.apps/mon-site image updated
+Waiting for deployment "mon-site" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "mon-site" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "mon-site" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "mon-site" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "mon-site" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "mon-site" rollout to finish: 2 of 3 updated replicas are available...
+Waiting for deployment "mon-site" rollout to finish: 2 of 3 updated replicas are available...
+deployment "mon-site" successfully rolled out
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES       SELECTOR
+deployment.apps/mon-site   3/3     3            3           20s   nginx        nginx:1.25   app=mon-site
+
+NAME                                  DESIRED   CURRENT   READY   AGE   CONTAINERS   IMAGES       SELECTOR
+replicaset.apps/mon-site-5b67f86759   0         0         0       20s   nginx        nginx:1.23   app=mon-site,pod-template-hash=5b67f86759
+replicaset.apps/mon-site-7df5dc4cb5   3         3         3       12s   nginx        nginx:1.25   app=mon-site,pod-template-hash=7df5dc4cb5
+
+NAME                            READY   STATUS    RESTARTS   AGE   IP           NODE        NOMINATED NODE   READINESS GATES
+pod/mon-site-7df5dc4cb5-2658p   1/1     Running   0          12s   10.244.2.3   tp-rs-m04   <none>           <none>
+pod/mon-site-7df5dc4cb5-4snzs   1/1     Running   0          12s   10.244.1.3   tp-rs-m02   <none>           <none>
+pod/mon-site-7df5dc4cb5-xfz9b   1/1     Running   0          6s    10.244.0.5   tp-rs       <none>           <none>
+NAME                  DESIRED   IMAGE
+mon-site-5b67f86759   0         nginx:1.23
+mon-site-7df5dc4cb5   3         nginx:1.25
+deployment.apps/mon-site
+REVISION  CHANGE-CAUSE
+1         <none>
+2         <none>
+
+deployment.apps/mon-site rolled back
+Waiting for deployment "mon-site" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "mon-site" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "mon-site" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "mon-site" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "mon-site" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "mon-site" rollout to finish: 2 of 3 updated replicas are available...
+Waiting for deployment "mon-site" rollout to finish: 2 of 3 updated replicas are available...
+deployment "mon-site" successfully rolled out
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES       SELECTOR
+deployment.apps/mon-site   3/3     3            3           32s   nginx        nginx:1.23   app=mon-site
+
+NAME                                  DESIRED   CURRENT   READY   AGE   CONTAINERS   IMAGES       SELECTOR
+replicaset.apps/mon-site-5b67f86759   3         3         3       32s   nginx        nginx:1.23   app=mon-site,pod-template-hash=5b67f86759
+replicaset.apps/mon-site-7df5dc4cb5   0         0         0       24s   nginx        nginx:1.25   app=mon-site,pod-template-hash=7df5dc4cb5
+
+NAME                            READY   STATUS    RESTARTS   AGE   IP           NODE        NOMINATED NODE   READINESS GATES
+pod/mon-site-5b67f86759-czcw6   1/1     Running   0          12s   10.244.2.4   tp-rs-m04   <none>           <none>
+pod/mon-site-5b67f86759-mjbnm   1/1     Running   0          6s    10.244.0.6   tp-rs       <none>           <none>
+pod/mon-site-5b67f86759-rdz5g   1/1     Running   0          12s   10.244.1.4   tp-rs-m02   <none>           <none>
+NAME                  DESIRED   IMAGE
+mon-site-5b67f86759   3         nginx:1.23
+mon-site-7df5dc4cb5   0         nginx:1.25
+deployment.apps/mon-site
+REVISION  CHANGE-CAUSE
+2         <none>
+3         <none>
+
+deployment.apps/mon-site image updated
+deployment.apps/mon-site annotated
+Waiting for deployment "mon-site" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "mon-site" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "mon-site" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "mon-site" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "mon-site" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "mon-site" rollout to finish: 2 out of 3 new replicas have been updated...
+Waiting for deployment "mon-site" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "mon-site" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "mon-site" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "mon-site" rollout to finish: 2 of 3 updated replicas are available...
+Waiting for deployment "mon-site" rollout to finish: 2 of 3 updated replicas are available...
+deployment "mon-site" successfully rolled out
+NAME                       READY   UP-TO-DATE   AVAILABLE   AGE   CONTAINERS   IMAGES       SELECTOR
+deployment.apps/mon-site   3/3     3            3           44s   nginx        nginx:1.27   app=mon-site
+
+NAME                                  DESIRED   CURRENT   READY   AGE   CONTAINERS   IMAGES       SELECTOR
+replicaset.apps/mon-site-597895787f   3         3         3       12s   nginx        nginx:1.27   app=mon-site,pod-template-hash=597895787f
+replicaset.apps/mon-site-5b67f86759   0         0         0       44s   nginx        nginx:1.23   app=mon-site,pod-template-hash=5b67f86759
+replicaset.apps/mon-site-7df5dc4cb5   0         0         0       36s   nginx        nginx:1.25   app=mon-site,pod-template-hash=7df5dc4cb5
+
+NAME                            READY   STATUS    RESTARTS   AGE   IP           NODE        NOMINATED NODE   READINESS GATES
+pod/mon-site-597895787f-f66kc   1/1     Running   0          6s    10.244.0.7   tp-rs       <none>           <none>
+pod/mon-site-597895787f-mx8v5   1/1     Running   0          12s   10.244.1.5   tp-rs-m02   <none>           <none>
+pod/mon-site-597895787f-rgwfh   1/1     Running   0          12s   10.244.2.5   tp-rs-m04   <none>           <none>
+NAME                  DESIRED   IMAGE
+mon-site-597895787f   3         nginx:1.27
+mon-site-5b67f86759   0         nginx:1.23
+mon-site-7df5dc4cb5   0         nginx:1.25
+deployment.apps/mon-site
+REVISION  CHANGE-CAUSE
+2         <none>
+3         <none>
+4         passage en nginx 1.27
+
+deployment.apps/mon-site patched
+NAME                  DESIRED   CURRENT   READY   AGE
+mon-site-597895787f   3         3         3       12s
+mon-site-5b67f86759   0         0         0       44s
+mon-site-7df5dc4cb5   0         0         0       36s
